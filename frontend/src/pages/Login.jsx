@@ -10,6 +10,8 @@ const Login = () => {
         password: '',
     });
 
+    const [error, setError] = useState(null);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });           
@@ -36,6 +38,7 @@ const Login = () => {
                 console.log('Data sent to the api');
             } else {
                 console.log('Data not sent to the api');
+                setError('Username or Password incorrect :(');
             }
         } catch (error) {
             console.log(error);
@@ -64,6 +67,9 @@ const Login = () => {
         <Card.Footer className="text-center">
             <Card.Text className='text-muted'>Don't have an account? <a  href="/register">Register</a></Card.Text>
         </Card.Footer>
+        <div className="w-100 text-center">
+        {error && <div className="alert alert-danger">{error}</div>}
+        </div>
     </Card>
     </div>
     );
