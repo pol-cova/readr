@@ -2,7 +2,9 @@
 // Import custom components from reac-bootstrap
 import { Button, Form, Card } from 'react-bootstrap';
 // Import useState hook
-import { useState } from 'react';   
+import { useState } from 'react';  
+// Import navbar
+import Navbar from '../components/Navbar';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -46,10 +48,12 @@ const Login = () => {
     };
 
     return (
+    <div>
+    <Navbar />
     <div className='d-flex justify-content-center align-items-center vh-100 bg-dark text-light'>
     <Card className='shadow-lg' style={{ width: '400px' }}>
         <Card.Body>
-            <Card.Title className="mb-4 text-center" style={{ fontSize: '36px' }}>Login</Card.Title>
+            <Card.Title className="mb-4 text-center" style={{ fontSize: '36px' }}>ReadR</Card.Title>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label style={{ fontSize: '18px' }}>Username</Form.Label>
@@ -71,6 +75,7 @@ const Login = () => {
         {error && <div className="alert alert-danger">{error}</div>}
         </div>
     </Card>
+    </div>
     </div>
     );
 }
