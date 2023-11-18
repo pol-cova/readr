@@ -5,6 +5,8 @@ import { Button, Form, Card } from 'react-bootstrap';
 import { useState } from 'react';  
 // Import navbar
 import Navbar from '../components/Navbar';
+// Import footer
+import Footer from '../components/Footer';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -76,6 +78,7 @@ const Login = () => {
         </div>
     </Card>
     </div>
+    <Footer />
     </div>
     );
 }
